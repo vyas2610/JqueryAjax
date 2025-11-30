@@ -9,7 +9,12 @@
 <body>
     <h1>Jquery Ajax Example</h1>
 
-    <p style="width: 450px; height: auto; border:1px solid red"></p>
+    <div style="width: 450px; height: auto; border:1px solid red">
+
+        <p id="gender">Gender : </p>
+        <p id="name">Name : </p>
+        <p id="email">Email : </p>
+    </div>
 
     <button>Fetch Data</button>
 
@@ -20,12 +25,14 @@
 
     $(document).ready(function () {
     $("button").click(function () {
-        
+
         $.ajax({
-            url: "data.txt",
+            url: "https://randomuser.me/api",
             type: "GET",
             success: function (res) {
-                console.log("Success:", res);
+                data = res.results[0];
+                console.log("Success:", data);
+                $("#")
             },
             error: function (er) {
                 console.log("Error:", er);

@@ -14,4 +14,28 @@
     <button>Fetch Data</button>
 
 </body> 
+
+
+<script>
+
+    $(document).ready(function () {
+
+    $("button").click(function () {
+
+        $.ajax({
+            url: "data.txt",
+            type: "GET",
+            success: function (res) {
+                console.log("Success:", res);
+            },
+            error: function (er) {
+                console.log("Error:", er);
+            }
+        });
+
+    });
+
+});
+
+</script>
 </html>
